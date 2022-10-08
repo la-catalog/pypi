@@ -1,0 +1,2 @@
+class VersionCollision(Exception):
+    pass
