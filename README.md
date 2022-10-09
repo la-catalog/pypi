@@ -1,4 +1,5 @@
 # pypi
+Packages: https://la-catalog.github.io/pypi/simple
 
 # packages.json
 JSON file with packages and their respective version and url.  
