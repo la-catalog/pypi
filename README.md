@@ -7,11 +7,11 @@ JSON file with packages and their respective version and url.
 ```json
 {
     "packageA": {
-        "1.0.0": "packageA@git+https://github.com/la-catalog/packageA.git"
+        "1.0.0": "packageA@git+https://github.com/ORGANIZATION/packageA.git"
     },
     "packageB": {
-        "1.0.0": "packageB@git+https://github.com/la-catalog/packageB.git",
-        "1.0.1": "packageB@git+https://github.com/la-catalog/packageB.git"
+        "1.0.0": "packageB@git+https://github.com/ORGANIZATION/packageB.git",
+        "1.0.1": "packageB@git+https://github.com/ORGANIZATION/packageB.git"
     },
 }
 ```
