@@ -1,8 +1,5 @@
 {
   "page-models": {
     "0.0.1": "page-models@git+https://github.com/la-catalog/page-models.git"
-  },
-  "test": {
-    "0.0.1": "test@git+https://github.com/la-catalog/test.git"
   }
 }
