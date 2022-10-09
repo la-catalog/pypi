@@ -5,8 +5,8 @@ from exceptions import VersionCollision, VersionInvalid
 from pages import delete_package_page
 from utility import is_canonical, normalize
 
-# Both username and organization are valid in "username" field
-url = "{package}@git+https://github.com/{username}/{package}.git"
+# Both organization and username can be used in the organization field
+url = "{package}@git+https://github.com/{organization}/{package}.git"
 
 
 def get_packages() -> dict[str, dict[str, str]]:
@@ -18,7 +18,7 @@ def save_packages(packages: dict[str, dict[str, str]]):
     Path("packages.json").write_text(json.dumps(packages, indent=2))
 
 
-def add_package(username: str, package: str, version: str):
+def add_package(organization: str, package: str, version: str):
     package = normalize(package)
     packages = get_packages()
     packages[package] = packages.get(package, {})
@@ -29,7 +29,7 @@ def add_package(username: str, package: str, version: str):
     if version in packages[package]:
         raise VersionCollision(f"Package {package} already have version {version}")
 
-    packages[package][version] = url.format(package=package, username=username)
+    packages[package][version] = url.format(package=package, organization=organization)
 
     save_packages(packages)
 

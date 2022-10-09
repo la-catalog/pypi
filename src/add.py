@@ -1,10 +1,11 @@
+import os
 import sys
 
 from packages import add_package, get_packages
 from pages import refresh_pages
 
-username = "la-catalog"
+organization = os.environ["GITHUB_ORG"]
 _, package, version = sys.argv
 
-add_package(username, package, version)
+add_package(organization, package, version)
 refresh_pages(get_packages())
