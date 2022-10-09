@@ -1,8 +1,9 @@
 import json
 from pathlib import Path
 
-from exceptions import VersionCollision
+from exceptions import VersionCollision, VersionInvalid
 from pages import delete_package_page
+from utility import is_canonical, normalize
 
 # Both username and organization are valid in "username" field
 url = "{package}@git+https://github.com/{username}/{package}.git"
@@ -18,8 +19,12 @@ def save_packages(packages: dict[str, dict[str, str]]):
 
 
 def add_package(username: str, package: str, version: str):
+    package = normalize(package)
     packages = get_packages()
     packages[package] = packages.get(package, {})
+
+    if not is_canonical(version):
+        raise VersionInvalid(f"Version {version} format is invalid")
 
     if version in packages[package]:
         raise VersionCollision(f"Package {package} already have version {version}")
@@ -30,6 +35,7 @@ def add_package(username: str, package: str, version: str):
 
 
 def remove_package(package: str):
+    package = normalize(package)
     packages = get_packages()
 
     packages.pop(package, None)
