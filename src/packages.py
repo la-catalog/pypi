@@ -6,7 +6,7 @@ from pages import delete_package_page
 from utility import is_canonical, normalize
 
 # Both organization and username can be used in the organization field
-url = "git+https://github.com/{organization}/{package}.git@{version}#egg={package}"
+url = "git+https://github.com/{organization}/{package}.git@{version}#egg={package_normalized}-{version}"
 
 
 def get_packages() -> dict[str, dict[str, str]]:
@@ -19,25 +19,26 @@ def save_packages(packages: dict[str, dict[str, str]]):
 
 
 def add_package(organization: str, package: str, version: str):
-    package = normalize(package)
     packages = get_packages()
     packages[package] = packages.get(package, {})
 
     if not is_canonical(version):
-        raise VersionInvalid(f"Version {version} format is invalid")
+        raise VersionInvalid(f"Version '{version}' format is invalid")
 
     if version in packages[package]:
-        raise VersionCollision(f"Package {package} already have version {version}")
+        raise VersionCollision(f"Package '{package}' already have version {version}")
 
     packages[package][version] = url.format(
-        package=package, organization=organization, version=version
+        package=package,
+        organization=organization,
+        version=version,
+        package_normalized=normalize(package),
     )
 
     save_packages(packages)
 
 
 def remove_package(package: str, version: str = None):
-    package = normalize(package)
     packages = get_packages()
 
     if version:

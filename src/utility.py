@@ -1,9 +1,9 @@
 import re
 
 
-# https://peps.python.org/pep-0503/#normalized-names
+# https://peps.python.org/pep-0427/#escaping-and-unicode
 def normalize(name):
-    return re.sub(r"[-_.]+", "-", name).lower()
+    return re.sub("[^\w\d.]+", "_", name, re.UNICODE)
 
 
 # https://peps.python.org/pep-0440/#appendix-b-parsing-version-strings-with-regular-expressions
