@@ -3,10 +3,10 @@ from pathlib import Path
 
 from exceptions import VersionCollision, VersionInvalid
 from pages import delete_package_page
-from utility import is_canonical, normalize
+from utility import egg, is_canonical
 
 # Both organization and username can be used in the organization field
-url = "git+https://github.com/{organization}/{package}.git@{version}#egg={package_normalized}-{version}"
+url = "git+https://github.com/{organization}/{package}.git@{version}#egg={egg}"
 
 
 def get_packages() -> dict[str, dict[str, str]]:
@@ -32,7 +32,7 @@ def add_package(organization: str, package: str, version: str):
         package=package,
         organization=organization,
         version=version,
-        package_normalized=normalize(package),
+        egg=egg(package, version),
     )
 
     save_packages(packages)

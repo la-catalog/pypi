@@ -2,8 +2,9 @@ import re
 
 
 # https://peps.python.org/pep-0427/#escaping-and-unicode
-def normalize(name):
-    return re.sub("[^\w\d.]+", "_", name, re.UNICODE)
+def egg(package, version):
+    package = re.sub("[^\w\d.]+", "_", package, re.UNICODE)
+    return f"{package}-{version}"
 
 
 # https://peps.python.org/pep-0440/#appendix-b-parsing-version-strings-with-regular-expressions
