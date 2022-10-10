@@ -34,10 +34,14 @@ def add_package(organization: str, package: str, version: str):
     save_packages(packages)
 
 
-def remove_package(package: str):
+def remove_package(package: str, version: str = None):
     package = normalize(package)
     packages = get_packages()
 
-    packages.pop(package, None)
+    if version:
+        packages.get(package, {}).pop(version, None)
+    else:
+        packages.pop(package, None)
+
     save_packages(packages)
     delete_package_page(package)
