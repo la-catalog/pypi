@@ -1,20 +1,21 @@
 # pypi
-Packages: https://la-catalog.github.io/pypi/simple
+Repository to centralize all python packages used inside the organization.  
 
 # packages.json
-JSON file with packages and their respective version and url.  
+JSON file with all packages and their respective version and url.  
 
 ```json
 {
-    "packageA": {
-        "1.0.0": "packageA@git+https://github.com/ORGANIZATION/packageA.git"
+    "package-a": {
+        "1.0.0": "git+https://github.com/ORGANIZATION/package-a.git@1.0.0#egg=package_a-1.0.0"
     },
-    "packageB": {
-        "1.0.0": "packageB@git+https://github.com/ORGANIZATION/packageB.git",
-        "1.0.1": "packageB@git+https://github.com/ORGANIZATION/packageB.git"
+    "package-b": {
+        "1.0.0": "git+https://github.com/ORGANIZATION/package-b.git@1.0.0#egg=package_b-1.0.0",
+        "1.0.1": "git+https://github.com/ORGANIZATION/package-b.git@1.0.1#egg=package_b-1.0.1"
     },
 }
 ```
+**Note**: Username can be used instead of organization.
 
 # reference
-https://www.freecodecamp.org/news/how-to-use-github-as-a-pypi-server-1c3b0d07db2/  
+[How to use GitHub as a PyPi server](https://www.freecodecamp.org/news/how-to-use-github-as-a-pypi-server-1c3b0d07db2/)  
