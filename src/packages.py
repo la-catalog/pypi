@@ -6,8 +6,7 @@ from pages import delete_package_page
 from utility import is_canonical, normalize
 
 # Both organization and username can be used in the organization field
-url = "git+https://github.com/{organization}/{package}.git@{version}"
-# https://github.com/la-catalog/rabbit-models/tree/0.0.2
+url = "git+https://github.com/{organization}/{package}.git@{version}#egg={package}"
 
 
 def get_packages() -> dict[str, dict[str, str]]:
