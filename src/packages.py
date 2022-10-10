@@ -6,7 +6,8 @@ from pages import delete_package_page
 from utility import is_canonical, normalize
 
 # Both organization and username can be used in the organization field
-url = "{package}@git+https://github.com/{organization}/{package}.git"
+url = "{package}@git+https://github.com/{organization}/{package}.git@{version}"
+# https://github.com/la-catalog/rabbit-models/tree/0.0.2
 
 
 def get_packages() -> dict[str, dict[str, str]]:
@@ -29,7 +30,9 @@ def add_package(organization: str, package: str, version: str):
     if version in packages[package]:
         raise VersionCollision(f"Package {package} already have version {version}")
 
-    packages[package][version] = url.format(package=package, organization=organization)
+    packages[package][version] = url.format(
+        package=package, organization=organization, version=version
+    )
 
     save_packages(packages)
 
