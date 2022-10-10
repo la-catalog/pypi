@@ -1,5 +1,5 @@
 {
   "rabbit-models": {
-    "0.1.0": "rabbit-models@git+https://github.com/la-catalog/rabbit-models.git@0.1.0"
+    "0.1.0": "git+https://github.com/la-catalog/rabbit-models.git@0.1.0"
   }
 }

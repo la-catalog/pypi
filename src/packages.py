@@ -6,7 +6,7 @@ from pages import delete_package_page
 from utility import is_canonical, normalize
 
 # Both organization and username can be used in the organization field
-url = "{package}@git+https://github.com/{organization}/{package}.git@{version}"
+url = "git+https://github.com/{organization}/{package}.git@{version}"
 # https://github.com/la-catalog/rabbit-models/tree/0.0.2
 
 
