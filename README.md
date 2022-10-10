@@ -1,5 +1,19 @@
 # pypi
-Repository to centralize all python packages used inside the organization.  
+Centralize all python packages in this repository.  
+
+# setup
+Enable GitHub Pages in this repository, all packages will be visible in `https://ORGANIZATION.github.io/REPOSITORY/simple/`.  
+
+**Note**: You can always use username instead of organization.  
+
+# run
+Export an environment variable with the organization `export GITHUB_ORG=example`.  
+
+- Refresh website: `python src/refresh.py`
+    - Only use if you manually change the `packages.json` file
+- Add package: `python src/add.py PACKAGE VERSION`
+- Remove package: `python src/add.py PACKAGE [VERSION]`
+    - Will remove the package completely if no version is given
 
 # packages.json
 JSON file with all packages and their respective version and url.  
@@ -15,7 +29,6 @@ JSON file with all packages and their respective version and url.
     },
 }
 ```
-**Note**: Username can be used instead of organization.
 
 # reference
 [How to use GitHub as a PyPi server](https://www.freecodecamp.org/news/how-to-use-github-as-a-pypi-server-1c3b0d07db2/)  
