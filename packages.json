@@ -3,6 +3,7 @@
     "0.0.1": "page-models@git+https://github.com/la-catalog/page-models.git"
   },
   "rabbit-models": {
-    "0.0.1": "rabbit-models@git+https://github.com/la-catalog/rabbit-models.git"
+    "0.0.1": "rabbit-models@git+https://github.com/la-catalog/rabbit-models.git",
+    "0.0.2": "rabbit-models@git+https://github.com/la-catalog/rabbit-models.git"
   }
 }
