@@ -1,6 +1,5 @@
 [project]
 name = "pypi"
-version = "0.0.1"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
@@ -22,7 +21,7 @@ isort = "python -m isort -v --ac ."
 
 [tool.pdm.dev-dependencies]
 lint = [
-    "black==22.8.0",
+    "black==22.10.0",
     "isort==5.10.1",
 ]
 
