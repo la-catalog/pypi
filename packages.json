@@ -10,5 +10,8 @@
   },
   "catalog-models": {
     "0.1.0": "git+https://github.com/la-catalog/catalog-models.git@0.1.0#egg=catalog_models-0.1.0"
+  },
+  "text-utility": {
+    "0.1.0": "git+https://github.com/la-catalog/text-utility.git@0.1.0#egg=text_utility-0.1.0"
   }
 }
