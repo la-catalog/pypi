@@ -1,26 +1,2 @@
 {
-  "page-models": {
-    "0.1.0": "git+https://github.com/la-catalog/page-models.git@0.1.0#egg=page_models-0.1.0"
-  },
-  "rabbit-models": {
-    "0.1.0": "git+https://github.com/la-catalog/rabbit-models.git@0.1.0#egg=rabbit_models-0.1.0"
-  },
-  "text-utility": {
-    "0.1.0": "git+https://github.com/la-catalog/text-utility.git@0.1.0#egg=text_utility-0.1.0"
-  },
-  "url-parser": {
-    "0.1.0": "git+https://github.com/la-catalog/url-parser.git@0.1.0#egg=url_parser-0.1.0"
-  },
-  "url-builder": {
-    "0.1.0": "git+https://github.com/la-catalog/url-builder.git@0.1.0#egg=url_builder-0.1.0"
-  },
-  "page-infra": {
-    "0.1.0": "git+https://github.com/la-catalog/page-infra.git@0.1.0#egg=page_infra-0.1.0"
-  },
-  "page-parser": {
-    "0.1.0": "git+https://github.com/la-catalog/page-parser.git@0.1.0#egg=page_parser-0.1.0"
-  },
-  "page-fetcher": {
-    "0.1.0": "git+https://github.com/la-catalog/page-fetcher.git@0.1.0#egg=page_fetcher-0.1.0"
-  }
 }
