@@ -25,5 +25,8 @@
   },
   "page-infra": {
     "0.1.0": "git+https://github.com/la-catalog/page-infra.git@0.1.0#egg=page_infra-0.1.0"
+  },
+  "page-fetcher": {
+    "0.1.0": "git+https://github.com/la-catalog/page-fetcher.git@0.1.0#egg=page_fetcher-0.1.0"
   }
 }
