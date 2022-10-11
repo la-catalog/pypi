@@ -19,5 +19,8 @@
   },
   "url-parser": {
     "0.1.0": "git+https://github.com/la-catalog/url-parser.git@0.1.0#egg=url_parser-0.1.0"
+  },
+  "webpage-components": {
+    "0.1.0": "git+https://github.com/la-catalog/webpage-components.git@0.1.0#egg=webpage_components-0.1.0"
   }
 }
