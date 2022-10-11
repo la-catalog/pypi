@@ -1,4 +1,4 @@
 from packages import get_packages
-from pages import refresh_pages
+from pages import recreate_pages
 
-refresh_pages(get_packages())
+recreate_pages(get_packages())
