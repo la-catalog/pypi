@@ -16,3 +16,7 @@ def is_canonical(version):
         )
         is not None
     )
+
+
+def sorted_dict(d: dict) -> dict:
+    return {k: d[k] for k in sorted(d)}

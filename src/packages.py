@@ -3,7 +3,7 @@ from pathlib import Path
 
 from exceptions import VersionCollision, VersionInvalid
 from pages import delete_package_page
-from utility import egg, is_canonical
+from utility import egg, is_canonical, sorted_dict
 
 # Both organization and username can be used in the organization field
 url = "git+https://github.com/{organization}/{package}.git@{version}#egg={egg}"
@@ -15,6 +15,8 @@ def get_packages() -> dict[str, dict[str, str]]:
 
 
 def save_packages(packages: dict[str, dict[str, str]]):
+    packages = {k: sorted_dict(v) for k, v in packages.items()}
+    packages = sorted_dict(packages)
     Path("packages.json").write_text(json.dumps(packages, indent=2))
 
 
