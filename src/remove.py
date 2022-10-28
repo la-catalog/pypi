@@ -1,7 +1,7 @@
 import sys
 
-from packages import get_packages, remove_package
-from pages import recreate_pages
+from core.packages import get_packages, remove_package
+from core.pages import recreate_pages
 
 args = sys.argv[1:]
 

@@ -1,19 +1,10 @@
 # pypi
-Centralize all python packages in this repository.  
+Using GitHub as PyPi server.  
 
 # setup
-Enable GitHub Pages in this repository, all packages will be visible in `https://ORGANIZATION.github.io/REPOSITORY/simple/`.  
+Enable GitHub Pages in this repository so all packages will be visible in an URL like: `https://ORGANIZATION.github.io/REPOSITORY/simple/`.  
 
 **Note**: You can always use username instead of organization.  
-
-# run
-Export an environment variable with the organization `export GITHUB_ORG=example`.  
-
-- Refresh website: `python src/refresh.py`
-    - Only use if you manually change the `packages.json` file
-- Add package: `python src/add.py PACKAGE VERSION`
-- Remove package: `python src/add.py PACKAGE [VERSION]`
-    - Will remove the package completely if no version is given
 
 # packages.json
 JSON file with all packages and their respective version and url.  
@@ -30,5 +21,34 @@ JSON file with all packages and their respective version and url.
 }
 ```
 
+# scripts
+Before running them, you need to set the environment variable `GITHUB_ORG` with the organization name.  
+```
+export GITHUB_ORG=example
+```
+
+## refresh
+Use it to refresh the HTML pages (in case you manually change the content of `packages.json`):  
+```
+python src/refresh.py
+```
+
+## add
+Add a package to `package.json` and refresh the HTML pages:  
+```
+python src/add.py PACKAGE VERSION
+```
+
+**Note**: Package repository should have a tag with the version.  
+
+## remove
+Remove a package (or just a version of the package) from `packages.json` and refresh the HTML pages:  
+```
+python src/remove.py PACKAGE [VERSION]
+```
+
 # reference
 [How to use GitHub as a PyPi server](https://www.freecodecamp.org/news/how-to-use-github-as-a-pypi-server-1c3b0d07db2/)  
+[PEP 503](https://peps.python.org/pep-0503/)  
+[PEP 427](https://peps.python.org/pep-0427)  
+[PEP 440](https://peps.python.org/pep-0440)  

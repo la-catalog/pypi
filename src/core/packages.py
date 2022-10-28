@@ -1,9 +1,9 @@
 import json
 from pathlib import Path
 
-from exceptions import VersionCollision, VersionInvalid
-from pages import delete_package_page
-from utility import egg, is_canonical, sorted_dict
+from core.exceptions import VersionCollision, VersionInvalid
+from core.pages import delete_package_page
+from core.utility import egg, is_canonical, sorted_dict
 
 # Both organization and username can be used in the organization field
 url = "git+https://github.com/{organization}/{package}.git@{version}#egg={egg}"
