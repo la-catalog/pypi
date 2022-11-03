@@ -1,7 +1,4 @@
 {
-  "catalog-models": {
-    "0.1.0": "git+https://github.com/la-catalog/catalog-models.git@0.1.0#egg=catalog_models-0.1.0"
-  },
   "page-fetcher": {
     "0.1.0": "git+https://github.com/la-catalog/page-fetcher.git@0.1.0#egg=page_fetcher-0.1.0"
   },
