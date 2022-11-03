@@ -9,7 +9,8 @@
     "0.1.0": "git+https://github.com/la-catalog/page-infra.git@0.1.0#egg=page_infra-0.1.0"
   },
   "page-models": {
-    "0.1.0": "git+https://github.com/la-catalog/page-models.git@0.1.0#egg=page_models-0.1.0"
+    "0.1.0": "git+https://github.com/la-catalog/page-models.git@0.1.0#egg=page_models-0.1.0",
+    "0.2.0": "git+https://github.com/la-catalog/page-models.git@0.2.0#egg=page_models-0.2.0"
   },
   "page-parser": {
     "0.1.0": "git+https://github.com/la-catalog/page-parser.git@0.1.0#egg=page_parser-0.1.0"
