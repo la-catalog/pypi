@@ -22,10 +22,6 @@ JSON file with all packages and their respective version and url.
 ```
 
 # scripts
-Before running them, you need to set the environment variable `GITHUB_ORG` with the organization name.  
-```
-export GITHUB_ORG=example
-```
 
 ## refresh
 Use it to refresh the HTML pages (in case you manually change the content of `packages.json`):  
@@ -36,7 +32,7 @@ python src/refresh.py
 ## add
 Add a package to `package.json` and refresh the HTML pages:  
 ```
-python src/add.py PACKAGE VERSION
+python src/add.py ORGANIZATION PACKAGE VERSION
 ```
 
 **Note**: Package repository should have a tag with the version.  
@@ -45,6 +41,47 @@ python src/add.py PACKAGE VERSION
 Remove a package (or just a version of the package) from `packages.json` and refresh the HTML pages:  
 ```
 python src/remove.py PACKAGE [VERSION]
+```
+
+# github action
+The following example show how to use GitHub Action to insert a package in this PyPi repository.  
+
+Notes:
+- You need a GitHub token with permission to update the PyPi repository (in the example you can see it as `${{ secrets.TOKEN }}`)  
+- Replace "ORGANIZATION" with the GitHub organization name (or an username if you PyPi repository is not in an organization)  
+- Replace "REPOSITORY" with the PyPi repository name (in case you didn't name it "pypi")  
+- This is an example, you should adapt to your needs.  
+
+```yaml
+name: Publish package
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  publish:
+    steps:
+      - name: Checkout PyPi repository
+        uses: actions/checkout@v3
+        with:
+          repository: 'ORGANIZATION/REPOSITORY'
+          token: ${{ secrets.TOKEN }}
+
+      - name: Setup Python
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run script to add package
+        run: python src/add.py ORGANIZATION ${{ github.event.repository.name }} ${{ github.ref_name }}
+          
+      - name: Push changes to Pypi repository
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: Publish package
+          default_author: github_actions
 ```
 
 # reference
