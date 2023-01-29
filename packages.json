@@ -1,7 +1,8 @@
 {
   "logger-utility": {
     "0.0.1": "git+https://github.com/la-catalog/logger-utility.git@0.0.1#egg=logger_utility-0.0.1",
-    "0.1.0": "git+https://github.com/la-catalog/logger-utility.git@0.1.0#egg=logger_utility-0.1.0"
+    "0.1.0": "git+https://github.com/la-catalog/logger-utility.git@0.1.0#egg=logger_utility-0.1.0",
+    "0.1.1": "git+https://github.com/la-catalog/logger-utility.git@0.1.1#egg=logger_utility-0.1.1"
   },
   "page-fetcher": {
     "0.1.0": "git+https://github.com/la-catalog/page-fetcher.git@0.1.0#egg=page_fetcher-0.1.0"
